@@ -1,0 +1,22 @@
+{
+  "name": "dyncallgraphjs",
+  "version": "1.0.0",
+  "description": "A dynamic call graph generator for Javascript",
+  "main": "DCG.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ucr-riple/DynCallGraphJS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ucr-riple/DynCallGraphJS/issues"
+  },
+  "homepage": "https://github.com/ucr-riple/DynCallGraphJS#readme"
+}
