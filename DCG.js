@@ -172,13 +172,13 @@
                         //Identifying Non-native -> Native Calls
                         if ((f.toString().indexOf('[native code]') > -1 || f.toString().indexOf('[object ') === 0)) {
                                 callerIid = getLoc(giid);
-                                if (["apply","call"].includes(funName) || funName.startsWith("bound ")){   
-                                        applyStack.push(giid)
+                                //if (["apply","call"].includes(funName) || funName.startsWith("bound ")){   
+                                        //applyStack.push(giid)
                                         calleeIid = iidToFunName[giid] + " (Native)" + " [" + getLoc(giid)+"]"
-                                }
-                                else{
-                                        calleeIid = iidToFunName[giid] + " (Native)"
-                                }
+                                //}
+                                //else{
+                                        //calleeIid = iidToFunName[giid] + " (Native)"
+                                //}
 
                                 //Adding the caller and the callee to the call edge list
                                 if (!(callerIid in callerToCallee)) {
@@ -190,7 +190,7 @@
                                         calleeIids.push(calleeIid);
                                 }
 
-                                callStack.push(giid);
+                                callStack.push(giid); //what if we move this out and use this for both native and non-native calls
                         }
                 },
 
@@ -224,13 +224,19 @@
                                 }
                                 else{
                                         //Identifying Native -> Non-native Calls
-                                        if ((["apply","call"].includes(callerName) || callerName.startsWith("bound ")) && applyStack.length>0){  
-                                                var apcal_loc= applyStack[applyStack.length - 1];   
-                                                callerIid = callerName + " (Native)" + " [" + getLoc(apcal_loc) +"]" ;
-                                        }
-                                        else{
-                                                callerIid = callerName + " (Native)"
-                                        }
+                                        //if ((["apply","call"].includes(callerName) || callerName.startsWith("bound ")) && applyStack.length>0){  
+                                                //var apcal_loc= applyStack[applyStack.length - 1];   
+                                                //callerIid = callerName + " (Native)" + " [" + getLoc(apcal_loc) +"]" ;
+                                                if(callStack.length>0){
+                                                        callerIid = callerName + " (Native)" + " [" + getLoc(callStack[callStack.length - 1]) +"]" ;
+                                                }else{
+                                                        callerIid = callerName + " (Native)" 
+                                                }
+
+                                        //}
+                                        //else{
+                                                //callerIid = callerName + " (Native)"
+                                        //}
 
                                 }
                         }
@@ -316,9 +322,9 @@
                         if (callStack[callStack.length - 1] == giid) {
                                 callStack.pop();
                         }
-                        if (applyStack[applyStack.length - 1] == giid) {
+                        /*if (applyStack[applyStack.length - 1] == giid) {
                                 applyStack.pop();
-                        }
+                        }*/
                         
                 },
                 /**
@@ -356,15 +362,16 @@
                                         }
                         }
                         //Writing the output to a file
-                        if (!isBrowser) {
+                        /*if (!isBrowser) {
                                 var jsonString = JSON.stringify(jsonCallList,null,4)
                                 origName = process.argv[1];
                                 instname = origName.replace(/.js$/, "_dynCalls.json");
                                 fs.writeFileSync(instname, jsonString, function(err) {
                                         if(err) console.log('error', err);
                                       });
-                        }
+                        }*/
                         J$.callList=jsonCallList
+                        //console.log(jsonCallList)
                         return J$.callList
                 }
 

@@ -13,6 +13,10 @@
     "type": "git",
     "url": "git+https://github.com/ucr-riple/DynCallGraphJS.git"
   },
+  "dependencies": {
+    "jalangi2": "0.2.6",
+    "puppeteer": "5.5.0"
+  },
   "author": "",
   "license": "ISC",
   "bugs": {

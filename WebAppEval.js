@@ -1,7 +1,7 @@
 const puppeteer = require('puppeteer');
 const fs = require('fs');
 const process = require('process');
-var jalangi = require('/Users/madhurimachakraborty/Documents/jalangi2/src/js/utils/api');
+var jalangi = require('../node_modules/jalangi2/src/js/utils/api');
 var inputDir =[]
 inputDir.push(process.argv[2])
 var options = {
@@ -9,7 +9,7 @@ var options = {
         inlineIID: true,
         inlineSource: true,
         inlineJalangi: true,
-        analysis: ['src/js/sample_analyses/ChainedAnalyses.js', 'src/js/sample_analyses/dlint/Utils.js', 'experiments/metrics/DynNative.js'],
+        analysis: ['../node_modules/jalangi2/src/js/sample_analyses/ChainedAnalyses.js', '../node_modules/jalangi2/src/js/sample_analyses/dlint/Utils.js', './DCG.js'],
         outputDir: '/tmp',
         inputFiles: inputDir
 };
