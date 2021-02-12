@@ -2,7 +2,7 @@
         //Datastructure Listing
         var callerToCallee = Object.create(null); // Caller name@location => Callee name@location
         var iidToFunName = Object.create(null); // Function iid => Function name
-        var iidToCallerLoc = Object.create(null); // Callee iid => Caller iid
+        var calleeToCallingLoc = Object.create(null); // Callee iid => Calling Loc iid
         var callStack = []; //Sequence of active calls
         var applyStack = []
         var setterGetter= []; //Sequence of active setters and getters
@@ -72,7 +72,8 @@
          */
         function getLoc(giid) {
                 var loc = J$.iidToLocation(giid);
-                var locIid = "";
+                return loc;
+                /*var locIid = "";
                 try{
                         locIid = format.exec(loc);
                         format.lastIndex = 0;
@@ -81,7 +82,7 @@
                 catch(e){
                         console.log("Unsupported format: " +loc)
                         return;
-                }
+                }*/
         }
         J$.analysis = {
 
@@ -119,7 +120,8 @@
                         if(isSetter(base,offset)){
                                 var giid = J$.getGlobalIID(iid);
                                 setterGetter.push(giid)
-                                iidToCallerLoc[getPropSafe(desc.set, SPECIAL_PROP_SID)+":"+getPropSafe(desc.get, SPECIAL_PROP_IID)]=giid;
+                                //iidToFunName[giid] = desc.set.name  == "" ? "anon" : desc.set.name;
+                                calleeToCallingLoc[getPropSafe(desc.set, SPECIAL_PROP_SID)+":"+getPropSafe(desc.get, SPECIAL_PROP_IID)]=giid;
 
                         }
                 },
@@ -142,7 +144,8 @@
                         if(isGetter(base,offset)){
                                 var giid = J$.getGlobalIID(iid);
                                 setterGetter.push(giid);
-                                iidToCallerLoc[getPropSafe(desc.get, SPECIAL_PROP_SID)+":"+getPropSafe(desc.get, SPECIAL_PROP_IID)]=giid;
+                                iidToFunName[giid] = desc.get.nane
+                                calleeToCallingLoc[getPropSafe(desc.get, SPECIAL_PROP_SID)+":"+getPropSafe(desc.get, SPECIAL_PROP_IID)]=giid;
                         }
                 },
                 /**
@@ -166,19 +169,14 @@
                         iidToFunName[giid] = funName == "" ? "anon" : funName;
 
                         if (functionIid!=undefined){
-                                iidToCallerLoc[fgiid] = giid;
+                                calleeToCallingLoc[fgiid] = giid;
                         }
                        
                         //Identifying Non-native -> Native Calls
                         if ((f.toString().indexOf('[native code]') > -1 || f.toString().indexOf('[object ') === 0)) {
-                                callerIid = getLoc(giid);
-                                //if (["apply","call"].includes(funName) || funName.startsWith("bound ")){   
-                                        //applyStack.push(giid)
-                                        calleeIid = iidToFunName[giid] + " (Native)" + " [" + getLoc(giid)+"]"
-                                //}
-                                //else{
-                                        //calleeIid = iidToFunName[giid] + " (Native)"
-                                //}
+
+                                callerIid = getLoc(giid);//iidToFunName[callStack[callStack.length - 1]] + " " + getLoc(giid);
+                                calleeIid = iidToFunName[giid] + " (Native)" + " " + getLoc(giid)
 
                                 //Adding the caller and the callee to the call edge list
                                 if (!(callerIid in callerToCallee)) {
@@ -190,7 +188,7 @@
                                         calleeIids.push(calleeIid);
                                 }
 
-                                callStack.push(giid); //what if we move this out and use this for both native and non-native calls
+                                callStack.push(giid); 
                         }
                 },
 
@@ -209,45 +207,30 @@
                         iidToFunName[giid] = funName == "" ? "anon" : funName;
                         //If the CallStack is empty, when a function is called , the caller name is assigned as "system"
                         if (callStack.length === 0) {
-                                callerName = "system";
+                                callerName = "System";
                         }
                         else {
                                 callerName = iidToFunName[callStack[callStack.length - 1]];
-
                         }
-                        if (iidToCallerLoc[giid] == undefined) {
+                        if (calleeToCallingLoc[giid] == undefined) {
 
                                 if (f.name.startsWith("set ") || f.name.startsWith("get ")){
-                                        //Identifying Setters/Getters -> Non-native Calls        
-                                        callerIid = getLoc(setterGetter[setterGetter.length - 1]);
+                                        //Identifying  Setters/Getters -> Non-native Calls 
+                                        callerIid = getLoc(setterGetter[setterGetter.length - 1]);//iidToFunName[callStack[callStack.length - 1]] + " " +getLoc(setterGetter[setterGetter.length - 1]);
 
                                 }
                                 else{
                                         //Identifying Native -> Non-native Calls
-                                        //if ((["apply","call"].includes(callerName) || callerName.startsWith("bound ")) && applyStack.length>0){  
-                                                //var apcal_loc= applyStack[applyStack.length - 1];   
-                                                //callerIid = callerName + " (Native)" + " [" + getLoc(apcal_loc) +"]" ;
-                                                if(callStack.length>0){
-                                                        callerIid = callerName + " (Native)" + " [" + getLoc(callStack[callStack.length - 1]) +"]" ;
-                                                }else{
-                                                        callerIid = callerName + " (Native)" 
-                                                }
-
-                                        //}
-                                        //else{
-                                                //callerIid = callerName + " (Native)"
-                                        //}
-
+                                        callerIid = callerName + " (Native)" 
                                 }
                         }
                         //Identifying Non-native -> Non-native Calls
                         else {
-                                callerIid = getLoc(iidToCallerLoc[giid]);
-
+                                callerIid = getLoc(calleeToCallingLoc[giid])//callerName + " " + getLoc(calleeToCallingLoc[giid])
                         }
 
                         //Adding the caller and the callee to the call edge list
-                        calleeIid = getLoc(giid);
+                        calleeIid = getLoc(giid);//iidToFunName[giid] + " " + getLoc(giid);
 
                         if (!(callerIid in callerToCallee)) {
                                 callerToCallee[callerIid] = [];
@@ -258,7 +241,7 @@
                                 calleeIids.push(calleeIid);
                         }
 
-                        delete iidToCallerLoc[giid]
+                        delete calleeToCallingLoc[giid]
                         callStack.push(giid);
                 },
                 /**
@@ -322,10 +305,6 @@
                         if (callStack[callStack.length - 1] == giid) {
                                 callStack.pop();
                         }
-                        /*if (applyStack[applyStack.length - 1] == giid) {
-                                applyStack.pop();
-                        }*/
-                        
                 },
                 /**
                  * @desc Removes the top element of the CallStack when the execution of a function body completes
@@ -371,7 +350,7 @@
                                       });
                         }*/
                         J$.callList=jsonCallList
-                        //console.log(jsonCallList)
+                        console.log(jsonCallList)
                         return J$.callList
                 }
 
@@ -380,7 +359,7 @@
 }());
 
 /*
-node src/js/commands/jalangi.js --inlineIID --inlineSource --analysis DynNative.js experiments/example.js
+node src/js/commands/jalangi.js --inlineIID --inlineSource --analysis DCG.js experiments/example.js
 node src/js/commands/instrument.js --inlineIID --inlineSource -i --inlineJalangi --analysis src/js/sample_analyses/ChainedAnalyses.js --analysis src/js/sample_analyses/dlint/Utils.js --analysis DynNative.js --outputDir /tmp experiments/html/
 open file:///tmp/html/index.html
 */
