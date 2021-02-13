@@ -1,13 +1,13 @@
 # DynCallGraphJS
 A dynamic call graph generator using Jalangi2
 
-
-## Installation:
+## Installation
 Clone the repository, and then run:
 
 ```bash
 npm install
 ```
+
 ## Usage
 To generate Dynamic Call Graph of a JavaScript program.
 ```bash
@@ -19,9 +19,10 @@ node node_modules/jalangi2/src/js/commands/instrument.js --inlineIID --inlineSou
 
 open file:///tmp/html/index.html
 ```
-## Output Format
-The DCG is represented as list of objects where each key is a calling Location and the values are the called functions. The Native functions do not have an address associated with them and are represented in the ``` FunctionName (Native) ``` and non-native functions are represented as ``` file:startrow:startcolumn:endrow:endcolumn ```
 
-### Sample Run:
+## Output Format
+The DCG is represented as list of objects where each key is a calling Location and the values are the called functions. The Native functions do not have an address associated with them and are represented as ``` FunctionName (Native) ``` and non-native functions are represented as ```file:startrow:startcolumn:endrow:endcolumn ```
+
+### Sample Run
 
 
