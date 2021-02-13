@@ -72,8 +72,8 @@
          */
         function getLoc(giid) {
                 var loc = J$.iidToLocation(giid);
-                //return loc;
-                var locIid = "";
+                return loc;
+                /*var locIid = "";
                 try{
                         locIid = format.exec(loc);
                         format.lastIndex = 0;
@@ -82,7 +82,7 @@
                 catch(e){
                         console.log("Unsupported format: " +loc)
                         return;
-                }
+                }*/
         }
         J$.analysis = {
 
