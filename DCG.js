@@ -72,8 +72,8 @@
          */
         function getLoc(giid) {
                 var loc = J$.iidToLocation(giid);
-                return loc;
-                /*var locIid = "";
+                //return loc;
+                var locIid = "";
                 try{
                         locIid = format.exec(loc);
                         format.lastIndex = 0;
@@ -82,7 +82,7 @@
                 catch(e){
                         console.log("Unsupported format: " +loc)
                         return;
-                }*/
+                }
         }
         J$.analysis = {
 
@@ -176,7 +176,7 @@
                         if ((f.toString().indexOf('[native code]') > -1 || f.toString().indexOf('[object ') === 0)) {
 
                                 callerIid = getLoc(giid);//iidToFunName[callStack[callStack.length - 1]] + " " + getLoc(giid);
-                                calleeIid = iidToFunName[giid] + " (Native)" + " " + getLoc(giid)
+                                calleeIid = iidToFunName[giid] + " (Native)" //+ " " + getLoc(giid)
 
                                 //Adding the caller and the callee to the call edge list
                                 if (!(callerIid in callerToCallee)) {
@@ -207,7 +207,7 @@
                         iidToFunName[giid] = funName == "" ? "anon" : funName;
                         //If the CallStack is empty, when a function is called , the caller name is assigned as "system"
                         if (callStack.length === 0) {
-                                callerName = "System";
+                                callerName = "system";
                         }
                         else {
                                 callerName = iidToFunName[callStack[callStack.length - 1]];
@@ -221,7 +221,11 @@
                                 }
                                 else{
                                         //Identifying Native -> Non-native Calls
-                                        callerIid = callerName + " (Native)" 
+                                        /*if(callStack.length>0){  
+                                                callerIid = callerName + " (Native)" + " " + getLoc(callStack[callStack.length - 1])
+                                        }else{*/
+                                                callerIid = callerName + " (Native)"
+                                        //}
                                 }
                         }
                         //Identifying Non-native -> Non-native Calls
