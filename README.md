@@ -21,7 +21,7 @@ open file:///tmp/html/index.html
 ```
 
 ## Output Format
-The DCG is represented as list of objects where each key is a calling Location and the values are the called functions. The Native functions do not have an address associated with them and are represented as ``` FunctionName (Native) ``` and non-native functions are represented as ```file:startrow:startcolumn:endrow:endcolumn ```
+The DCG is represented as list of objects where each key is a calling Location and the values are the called functions. The Native functions do not have an address associated with them and are represented as ``` FunctionName (Native) ``` and non-native functions are represented as ```(file:startrow:startcolumn:endrow:endcolumn) ```
 
 ### Sample Run
 
