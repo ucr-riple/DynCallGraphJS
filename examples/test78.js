@@ -1,0 +1,1 @@
+eval("var bar =  new Function(\"return 10\"); bar();")
