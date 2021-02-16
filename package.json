@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "jalangi2": "0.2.6",
+    "jest": "26.6.3",
     "puppeteer": "5.5.0"
   },
   "author": "",
