@@ -1,15 +1,33 @@
-const util = require('util');
-const exec = util.promisify(require('child_process').exec);
+const util = require('util')
+const exec = util.promisify(require('child_process').exec)
+const fs = require('fs')
+const path = require('path')
 
-test('test1', async () => {
-    const dcg = await executeDCG('test1.js')
-    strDCG = dcg['stdout'].toString()
-    strDCG = strDCG.replace(/\s/g, "")
+describe('DCG Test Suite', () => {
+    const resultsPath = path.join(__dirname, '/expected')
+    const casesAmount = 2
+    var cases = []
+    var expectedResults = []
+    var resultsCounter = 1
 
-    expect(strDCG).toBe(`{ '(/home/renzo/research/dynamic_call_graph_id/examples/test1.js:9:1:9:10)':
-    [ '(/home/renzo/research/dynamic_call_graph_id/examples/test1.js:1:1:3:2)' ],
-   '(/home/renzo/research/dynamic_call_graph_id/examples/test1.js:2:3:2:6)':
-    [ '(/home/renzo/research/dynamic_call_graph_id/examples/test1.js:4:1:6:2)' ] }`.replace(/\s/g, ""))
+    for(var i = 1; i <= casesAmount; i++){
+        cases[i] = i
+    }
+
+    fs.readdirSync(resultsPath).forEach(element => {
+        let fullPath = path.join(resultsPath, element)
+        var results = fs.readFileSync(fullPath).toString()
+        expectedResults[resultsCounter] = results
+        resultsCounter += 1
+    })
+
+    test.each(cases)('test', async (i) => {
+        const dcg = await executeDCG(`test${i}.js`)
+        strDCG = dcg['stdout'].toString()
+        strDCG = strDCG.replace(/\s/g, "")
+    
+        expect(strDCG).toBe(expectedResults[i].replace(/\s/g, ""))
+    })
 })
 
 async function executeDCG(testFile){
