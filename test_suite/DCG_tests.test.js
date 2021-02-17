@@ -4,16 +4,12 @@ const exec = util.promisify(require('child_process').exec);
 test('test1', async () => {
     const dcg = await executeDCG('test1.js')
     strDCG = dcg['stdout'].toString()
+    strDCG = strDCG.replace(/\s/g, "")
 
-    expect(strDCG).toBe(`{
-  '(/home/renzo/research/dynamic_call_graph_id/examples/test1.js:9:1:9:10)': [
-    '(/home/renzo/research/dynamic_call_graph_id/examples/test1.js:1:1:3:2)'
-  ],
-  '(/home/renzo/research/dynamic_call_graph_id/examples/test1.js:2:3:2:6)': [
-    '(/home/renzo/research/dynamic_call_graph_id/examples/test1.js:4:1:6:2)'
-  ]
-}
-`)
+    expect(strDCG).toBe(`{ '(/home/renzo/research/dynamic_call_graph_id/examples/test1.js:9:1:9:10)':
+    [ '(/home/renzo/research/dynamic_call_graph_id/examples/test1.js:1:1:3:2)' ],
+   '(/home/renzo/research/dynamic_call_graph_id/examples/test1.js:2:3:2:6)':
+    [ '(/home/renzo/research/dynamic_call_graph_id/examples/test1.js:4:1:6:2)' ] }`.replace(/\s/g, ""))
 })
 
 async function executeDCG(testFile){
