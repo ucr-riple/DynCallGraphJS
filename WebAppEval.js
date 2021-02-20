@@ -17,25 +17,9 @@ var options = {
         outputDir: '/tmp',
         inputFiles: inputDir
 };
-var arr =((process.argv[2]).split(path.sep)).filter(el=> el!=="");
-var last = arr[arr.length-1] || arr[arr.length-2];
-root=path.join(root,last)
-var isMain = (element,index) => arr[index].includes("todomvc") && arr[index+1]=="examples"
-var mainInd = arr.findIndex(isMain);
-var main = path.sep + path.join(...arr.slice(0,mainInd+1))+path.sep;
-var siteassets = path.sep+ path.join(main,"site-assets")+path.sep;
-app.use(express.static(root));
-app.use(express.static(main));
-app.use(express.static(siteassets));
-app.get('/', function(req, res) {
-  res.sendFile(root + '/index.html');
-  //res.sendFile(inpath);
-});
-console.log(root,main,siteassets)
-var server = app.listen(8080);
 (async () => {
   if (process.argv.length < 5) {
-    console.log("Please provide arguments in the following sequence : 1:Input directory 2:web app 3:Output file path")
+    console.log("Please provide arguments in the following sequence : 1:Input directory 2:web app 3:Output path")
     return;
   }
   inpath = process.argv[3]
@@ -50,8 +34,7 @@ var server = app.listen(8080);
   const browser = await puppeteer.launch({ headless: false });
   const page = await browser.newPage();
   var data = "";
-  await page.goto('http://localhost:8080', { waitUntil: 'domcontentloaded' })
-  
+  await page.goto(inpath)
   await page.evaluate(async () => {
     await new Promise((resolve, reject) => {
       try {
@@ -68,12 +51,11 @@ var server = app.listen(8080);
     });
   });
   data = (await page.evaluate('J$.callList'));
-  fs.writeFile(outpath, JSON.stringify(data,null,2), function (err) {
+  fs.writeFile(outpath, JSON.stringify(data), function (err) {
     if (err) throw err;
     console.log('complete');
   });
   await browser.close();
-  server.close();
 })();
 
 //node WebappEval.js file/to/read/ output/path

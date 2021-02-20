@@ -19,6 +19,13 @@
 
         var SPECIAL_PROP_SID = J$.Constants.SPECIAL_PROP_SID;
         var SPECIAL_PROP_IID = J$.Constants.SPECIAL_PROP_IID;
+
+        function isNative(input){
+                if(input.toString() !== undefined){
+                    return input.toString().indexOf('[native code]') > -1 || input.toString().indexOf('[object ') === 0
+                }
+        }
+        
         function getPropSafe(base, prop){
                 if(base === null || base === undefined){
                   return undefined;
@@ -120,7 +127,6 @@
                         if(isSetter(base,offset)){
                                 var giid = J$.getGlobalIID(iid);
                                 setterGetter.push(giid)
-                                //iidToFunName[giid] = desc.set.name  == "" ? "anon" : desc.set.name;
                                 calleeToCallingLoc[getPropSafe(desc.set, SPECIAL_PROP_SID)+":"+getPropSafe(desc.get, SPECIAL_PROP_IID)]=giid;
 
                         }
@@ -173,9 +179,9 @@
                         }
                        
                         //Identifying Non-native -> Native Calls
-                        if ((f.toString().indexOf('[native code]') > -1 || f.toString().indexOf('[object ') === 0)) {
+                        if (isNative(f)) {
 
-                                callerIid = getLoc(giid);//iidToFunName[callStack[callStack.length - 1]] + " " + getLoc(giid);
+                                callerIid = getLoc(giid);
                                 calleeIid = iidToFunName[giid] + " (Native)" //+ " " + getLoc(giid)
 
                                 //Adding the caller and the callee to the call edge list
@@ -216,12 +222,12 @@
 
                                 if (f.name.startsWith("set ") || f.name.startsWith("get ")){
                                         //Identifying  Setters/Getters -> Non-native Calls 
-                                        callerIid = getLoc(setterGetter[setterGetter.length - 1]);//iidToFunName[callStack[callStack.length - 1]] + " " +getLoc(setterGetter[setterGetter.length - 1]);
+                                        callerIid = getLoc(setterGetter[setterGetter.length - 1]);
 
                                 }
                                 else{
                                         //Identifying Native -> Non-native Calls
-                                        /*if(callStack.length>0){  
+                                        /*if(callStack.length>0 && ){  
                                                 callerIid = callerName + " (Native)" + " " + getLoc(callStack[callStack.length - 1])
                                         }else{*/
                                                 callerIid = callerName + " (Native)"
@@ -230,11 +236,11 @@
                         }
                         //Identifying Non-native -> Non-native Calls
                         else {
-                                callerIid = getLoc(calleeToCallingLoc[giid])//callerName + " " + getLoc(calleeToCallingLoc[giid])
+                                callerIid = getLoc(calleeToCallingLoc[giid])
                         }
 
                         //Adding the caller and the callee to the call edge list
-                        calleeIid = getLoc(giid);//iidToFunName[giid] + " " + getLoc(giid);
+                        calleeIid = getLoc(giid);
 
                         if (!(callerIid in callerToCallee)) {
                                 callerToCallee[callerIid] = [];
@@ -332,6 +338,7 @@
                  */
                 scriptExit: function (iid, wrappedExceptionVal) {
                         callStack.pop();
+                        //return {};
                 },
                 /**
                  * @desc Writes the output to a json file 
@@ -354,7 +361,7 @@
                                       });
                         }*/
                         J$.callList=jsonCallList
-                        console.log(jsonCallList)
+                        //console.log(jsonCallList)
                         return J$.callList
                 }
 
