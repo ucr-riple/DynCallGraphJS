@@ -9,8 +9,8 @@ x();
 
 
 /*Expected Output
-{ '(/home/XYZ/research/DynCallGraphJS/examples/test44.js:5:9:7:13)': [ 'bind (Native)' ],
-  '(/home/XYZ/research/DynCallGraphJS/examples/test44.js:8:1:8:4)': [ 'bound anon (Native)' ],
+{ '(test44.js:5:9:7:13)': [ 'bind (Native)' ],
+  '(test44.js:8:1:8:4)': [ 'bound anon (Native)' ],
   'bound anon (Native)':
-   [ '(/home/XYZ/research/DynCallGraphJS/examples/test44.js:5:9:7:2)' ] }
+   [ '(test44.js:5:9:7:2)' ] }
 */

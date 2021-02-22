@@ -16,8 +16,8 @@ m("foo");
 
 
 /*Expected Output
-{ '(/home/XYZ/research/DynCallGraphJS/examples/test17.js:15:1:15:9)':
-   [ '(/home/XYZ/research/DynCallGraphJS/examples/test17.js:5:9:7:2)' ],
-  '(/home/XYZ/research/DynCallGraphJS/examples/test17.js:6:16:6:21)':
-   [ '(/home/XYZ/research/DynCallGraphJS/examples/test17.js:9:7:11:2)' ] }
+{ '(test17.js:15:1:15:9)':
+   [ '(test17.js:5:9:7:2)' ],
+  '(test17.js:6:16:6:21)':
+   [ '(test17.js:9:7:11:2)' ] }
 */

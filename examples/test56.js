@@ -24,16 +24,16 @@
 
 
 /*Expected Output
-{ '(/home/renzo/research/DynCallGraphJS/examples/test56.js:1:1:23:5)':
-   [ '(/home/renzo/research/DynCallGraphJS/examples/test56.js:1:2:23:2)' ],
-  '(/home/renzo/research/DynCallGraphJS/examples/test56.js:20:3:20:12)':
-   [ '(/home/renzo/research/DynCallGraphJS/examples/test56.js:4:10:8:6)' ],
-  '(/home/renzo/research/DynCallGraphJS/examples/test56.js:21:11:21:25)':
-   [ '(/home/renzo/research/DynCallGraphJS/examples/test56.js:16:10:18:6)' ],
-  '(/home/renzo/research/DynCallGraphJS/examples/test56.js:17:14:17:31)':
-   [ '(/home/renzo/research/DynCallGraphJS/examples/test56.js:9:10:15:6)' ],
-  '(/home/renzo/research/DynCallGraphJS/examples/test56.js:22:3:22:12)':
-   [ '(/home/renzo/research/DynCallGraphJS/examples/test56.js:11:16:13:10)' ],
-  '(/home/renzo/research/DynCallGraphJS/examples/test56.js:12:18:12:23)':
-   [ '(/home/renzo/research/DynCallGraphJS/examples/test56.js:5:17:7:8)' ] }
+{ '(test56.js:1:1:23:5)':
+   [ '(test56.js:1:2:23:2)' ],
+  '(test56.js:20:3:20:12)':
+   [ '(test56.js:4:10:8:6)' ],
+  '(test56.js:21:11:21:25)':
+   [ '(test56.js:16:10:18:6)' ],
+  '(test56.js:17:14:17:31)':
+   [ '(test56.js:9:10:15:6)' ],
+  '(test56.js:22:3:22:12)':
+   [ '(test56.js:11:16:13:10)' ],
+  '(test56.js:12:18:12:23)':
+   [ '(test56.js:5:17:7:8)' ] }
 */

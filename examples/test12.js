@@ -11,11 +11,11 @@ book.getDetails(); // => Fiction written by Peter King
 
 /*Expected Output
 {
-  '(/home/XYZ/research/DynCallGraphJS/examples/test12.js:8:12:8:45)': [
-    '(/home/XYZ/research/DynCallGraphJS/examples/test12.js:1:1:7:2)'
+  '(test12.js:8:12:8:45)': [
+    '(test12.js:1:1:7:2)'
   ],
-  '(/home/XYZ/research/DynCallGraphJS/examples/test12.js:9:1:9:18)': [
-    '(/home/XYZ/research/DynCallGraphJS/examples/test12.js:4:21:6:4)'
+  '(test12.js:9:1:9:18)': [
+    '(test12.js:4:21:6:4)'
   ]
 }
 */

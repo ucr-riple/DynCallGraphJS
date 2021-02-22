@@ -18,6 +18,6 @@ switch (expression) {
 
 
 /*Expected Output
-{ '(/home/XYZ/research/DynCallGraphJS/examples/test15.js:16:5:16:8)':
-   [ '(/home/XYZ/research/DynCallGraphJS/examples/test15.js:5:1:7:2)' ] }
+{ '(test15.js:16:5:16:8)':
+   [ '(test15.js:5:1:7:2)' ] }
 */

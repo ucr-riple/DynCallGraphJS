@@ -12,6 +12,6 @@ arrayOfFunction[0]();
 
 /*Expected Output
 {
-  '(/home/XYZ/research/DynCallGraphJS/examples/test9.js:10:1:10:21)': [ '(/home/XYZ/research/DynCallGraphJS/examples/test9.js:2:3:4:4)' ]
+  '(test9.js:10:1:10:21)': [ '(test9.js:2:3:4:4)' ]
 }
 */

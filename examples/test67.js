@@ -15,7 +15,7 @@ for (i in index) {
 
 
 /*Expected Output
-{ '(/home/renzo/research/DynCallGraphJS/examples/test67.js:13:3:13:18)':
-   [ '(/home/renzo/research/DynCallGraphJS/examples/test67.js:4:6:6:4)',
-     '(/home/renzo/research/DynCallGraphJS/examples/test67.js:7:6:9:4)' ] }
+{ '(test67.js:13:3:13:18)':
+   [ '(test67.js:4:6:6:4)',
+     '(test67.js:7:6:9:4)' ] }
 */

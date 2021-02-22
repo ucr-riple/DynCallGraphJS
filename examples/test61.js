@@ -14,8 +14,8 @@ foo();
 
 
 /*Expected Output
-{ '(/home/renzo/research/DynCallGraphJS/examples/test61.js:13:1:13:6)':
-   [ '(/home/renzo/research/DynCallGraphJS/examples/test61.js:8:1:12:2)' ],
-  '(/home/renzo/research/DynCallGraphJS/examples/test61.js:10:9:10:16)':
-   [ '(/home/renzo/research/DynCallGraphJS/examples/test61.js:4:1:6:2)' ] }
+{ '(test61.js:13:1:13:6)':
+   [ '(test61.js:8:1:12:2)' ],
+  '(test61.js:10:9:10:16)':
+   [ '(test61.js:4:1:6:2)' ] }
 */

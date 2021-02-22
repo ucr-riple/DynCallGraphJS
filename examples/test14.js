@@ -8,8 +8,8 @@ func();
 
 /*Expected Output
 {
-  '(/home/XYZ/research/DynCallGraphJS/examples/test14.js:6:1:6:7)': [
-    '(/home/XYZ/research/DynCallGraphJS/examples/test14.js:2:16:4:2)'
+  '(test14.js:6:1:6:7)': [
+    '(test14.js:2:16:4:2)'
   ]
 }
 */

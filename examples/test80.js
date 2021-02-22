@@ -18,7 +18,7 @@ object1.property2();
 
 
 /*Expected Output
-{ '(/home/renzo/research/DynCallGraphJS/examples/test80.js:5:1:16:3)': [ 'defineProperties (Native)' ],
-  '(/home/renzo/research/DynCallGraphJS/examples/test80.js:17:1:17:20)':
-   [ '(/home/renzo/research/DynCallGraphJS/examples/test80.js:2:11:4:2)' ] }
+{ '(test80.js:5:1:16:3)': [ 'defineProperties (Native)' ],
+  '(test80.js:17:1:17:20)':
+   [ '(test80.js:2:11:4:2)' ] }
 */
