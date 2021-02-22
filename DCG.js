@@ -172,7 +172,7 @@
                         if (isNative(f)) {
                                 callerIid = getLoc(giid);
                                 calleeIid = funName + " (Native)"
-
+                                iidToFunInfo[giid] = {"name" : (funName == "" ? "anon" : funName), "type" : isNative(f) == true ? "native": "non-native"}
                                 //Adding the caller and the callee to the call edge list
                                 if (!(callerIid in callerToCallee)) {
                                         callerToCallee[callerIid] = [];
