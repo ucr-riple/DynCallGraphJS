@@ -25,6 +25,7 @@ describe('DCG Test Suite', () => {
         // console.log(dcg)
         strDCG = dcg['stdout'].toString()
         strDCG = strDCG.replace(/\/\home\/renzo\/research\/DynCallGraphJS\/examples\//g, "")
+        strDCG = strDCG.replace(/^[^\]{]*/, "")
         strDCG = strDCG.replace(/\s/g, "")
     
         expect(strDCG).toBe(expectedResults[`test${i}`].replace(/\s/g, ""))
