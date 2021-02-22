@@ -25,5 +25,5 @@
   'apply (Native)':
    [ '(test28.js:6:10:8:6)',
      '(test28.js:3:10:5:6)' ],
-  '(/home/renzo/XYZ/DynCallGraphJS/examples/test28.js:13:5:13:18)': [ 'apply (Native)' ] }
+  '(test28.js:13:5:13:18)': [ 'apply (Native)' ] }
 */
