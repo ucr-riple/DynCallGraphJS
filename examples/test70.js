@@ -15,3 +15,11 @@
     },
   },
 ]);
+
+
+/*Expected Output
+{ '(/home/renzo/research/DynCallGraphJS/examples/test70.js:1:1:17:3)':
+   [ '(/home/renzo/research/DynCallGraphJS/examples/test70.js:1:2:8:2)' ],
+  '(/home/renzo/research/DynCallGraphJS/examples/test70.js:7:3:7:21)':
+   [ '(/home/renzo/research/DynCallGraphJS/examples/test70.js:13:14:15:6)' ] }
+*/

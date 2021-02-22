@@ -29,3 +29,22 @@
     };
   variadic(ellipsisFun)("one", "two", "three"); // Returns ["one", ["two", "three"]]
 })();
+
+
+/*Expected Output
+{ '(/home/XYZ/research/DynCallGraphJS/examples/test16.js:1:1:31:5)':
+   [ '(/home/XYZ/research/DynCallGraphJS/examples/test16.js:1:2:31:2)' ],
+  '(/home/XYZ/research/DynCallGraphJS/examples/test16.js:30:3:30:24)':
+   [ '(/home/XYZ/research/DynCallGraphJS/examples/test16.js:3:16:26:6)' ],
+  '(/home/XYZ/research/DynCallGraphJS/examples/test16.js:30:3:30:47)':
+   [ '(/home/XYZ/research/DynCallGraphJS/examples/test16.js:13:16:24:10)' ],
+  '(/home/XYZ/research/DynCallGraphJS/examples/test16.js:15:25:15:63)': [ 'call (Native)' ],
+  '(/home/XYZ/research/DynCallGraphJS/examples/test16.js:16:40:16:80)': [ 'max (Native)' ],
+  '(/home/XYZ/research/DynCallGraphJS/examples/test16.js:17:26:17:61)': [ 'Array (Native)' ],
+  '(/home/XYZ/research/DynCallGraphJS/examples/test16.js:18:28:18:64)': [ 'call (Native)' ],
+  '(/home/XYZ/research/DynCallGraphJS/examples/test16.js:22:13:22:41)': [ 'concat (Native)' ],
+  '(/home/XYZ/research/DynCallGraphJS/examples/test16.js:22:13:22:64)': [ 'concat (Native)' ],
+  '(/home/XYZ/research/DynCallGraphJS/examples/test16.js:20:18:23:12)': [ 'apply (Native)' ],
+  'apply (Native)':
+   [ '(/home/XYZ/research/DynCallGraphJS/examples/test16.js:27:19:29:6)' ] }
+*/
