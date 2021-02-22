@@ -15,7 +15,7 @@ var retPropName = function(){
 obj[retPropName()](); //Function Return
 obj["My"+"Name"](); //Binary Operation
 obj[propName](); //Parameter Pass
-obj[1=1?"MyName":"MyPhone"] //Multiple Constants
+obj[1===1?"MyName":"MyPhone"] //Multiple Constants
 for(key in obj){ //For-In Loop
         obj[key](); 
 }
