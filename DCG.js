@@ -159,10 +159,9 @@
                  */
                 invokeFunPre: function (iid, f, base, args, isConstructor, isMethod, functionIid, functionSid) {
                        
-                        var funName = f.name;
                         var giid = J$.getGlobalIID(iid);
                         var fgiid = functionSid+":"+functionIid;
-                        funName = funName == "bound " ? "bound anon" : funName;
+                        var funName = f.name == ""? "anon": "bound " ? "bound anon" : funName;
                         //iidToFunInfo[giid] = {"name" : (funName == "" ? "anon" : funName), "type" : isNative(f) == true ? "native": "non-native"}
                         
                         if (functionIid!=undefined){
@@ -172,6 +171,7 @@
                         if (isNative(f)) {
                                 callerIid = getLoc(giid);
                                 calleeIid = funName + " (Native)"
+                                console.log(callerIid)
                                 iidToFunInfo[giid] = {"name" : (funName == "" ? "anon" : funName), "type" : isNative(f) == true ? "native": "non-native"}
                                 //Adding the caller and the callee to the call edge list
                                 if (!(callerIid in callerToCallee)) {
@@ -208,11 +208,12 @@
                                         callerName = "system";
                                 }
                                 else {  //Identifying unmodelled native calls like within Proxy 
-                                        //if(iidToFunInfo[callStack[callStack.length - 1]]["type"]=="native"){
+                                        /*if(iidToFunInfo[callStack[callStack.length - 1]]["type"]=="native"){
                                                 callerName = iidToFunInfo[callStack[callStack.length - 1]]["name"];
-                                        /*}else{
+                                        }else{
                                                 callerName = "Unmodelled";
                                         }*/
+                                        callerName = iidToFunInfo[callStack[callStack.length - 1]]["name"] ;
                                 }
 
                                 if (f.name.startsWith("set ") || f.name.startsWith("get ")){
