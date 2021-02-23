@@ -7,7 +7,7 @@ describe('DCG Test Suite', () => {
     const resultsPath = path.join(__dirname, '/expected')
     const excludePath = __dirname.replace('test_suite','examples/')
     const pathRe = new RegExp(`${excludePath}`, 'g')
-    const casesAmount = 1
+    const casesAmount = 99
     var cases = []
     var expectedResults = new Map()
 
@@ -35,5 +35,5 @@ describe('DCG Test Suite', () => {
 })
 
 async function executeDCG(testFile){
-    return await exec(`node node_modules/jalangi2/src/js/commands/jalangi.js --inlineIID --inlineSource --analysis DCG4.js examples/${testFile}`)
+    return await exec(`node node_modules/jalangi2/src/js/commands/jalangi.js --inlineIID --inlineSource --analysis DCG.js examples/${testFile}`)
 }
