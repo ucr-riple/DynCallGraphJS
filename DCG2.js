@@ -24,7 +24,13 @@
                     return input.toString().indexOf('[native code]') > -1 || input.toString().indexOf('[object ') === 0
                 }
         }
-        
+        function getCallerName(){
+                if(callStack.length>0){
+                        return iidToFunInfo[callStack[callStack.length - 1]]["name"]
+                }else{
+                        return "global"
+                }
+        }
         function getPropSafe(base, prop){
                 if(base === null || base === undefined){
                   return undefined;
@@ -158,21 +164,23 @@
                  * @returns {undefined} - Any return value is ignored
                  */
                 invokeFunPre: function (iid, f, base, args, isConstructor, isMethod, functionIid, functionSid) {
-                       
+                        
+                        var funName = f.name;
                         var giid = J$.getGlobalIID(iid);
                         var fgiid = functionSid+":"+functionIid;
-                        var funName = f.name == ""? "anon": "bound " ? "bound anon" : funName;
-                        //iidToFunInfo[giid] = {"name" : (funName == "" ? "anon" : funName), "type" : isNative(f) == true ? "native": "non-native"}
+                        funName = funName == "bound " ? "bound anon" : funName;
+                        //iidToFunInfo[giid] = {"name" : iidToFunInfo[callStack[callStack.length-1]]["name"], "type" : isNative(f) == true ? "native": "non-native"}
                         
                         if (functionIid!=undefined){
                                 calleeToCallingLoc[fgiid] = giid;
                         }
                         //Identifying Non-native -> Native Calls
                         if (isNative(f)) {
-                                callerIid = getLoc(giid);
-                                calleeIid = funName + " (Native)"
-                                console.log(callerIid)
+                        
+                                callerIid =  getCallerName() + " " + getLoc(giid);
+                                calleeIid =  funName + " (Native)" + getLoc(giid);
                                 iidToFunInfo[giid] = {"name" : (funName == "" ? "anon" : funName), "type" : isNative(f) == true ? "native": "non-native"}
+
                                 //Adding the caller and the callee to the call edge list
                                 if (!(callerIid in callerToCallee)) {
                                         callerToCallee[callerIid] = [];
@@ -201,38 +209,37 @@
                         var funName = f.name;
                         var giid = J$.getGlobalIID(iid);
                         iidToFunInfo[giid] = {"name" : (funName == "" ? "anon" : funName), "type" : isNative(f) == true ? "native": "non-native"}
-
+                        
                         if (calleeToCallingLoc[giid] == undefined) {
                                 //If the CallStack is empty, when a function is called , the caller name is assigned as "system"
                                 if (callStack.length === 0) {
                                         callerName = "system";
                                 }
                                 else {  //Identifying unmodelled native calls like within Proxy 
-                                        /*if(iidToFunInfo[callStack[callStack.length - 1]]["type"]=="native"){
+                                        if(iidToFunInfo[callStack[callStack.length - 1]]["type"]=="native"){
                                                 callerName = iidToFunInfo[callStack[callStack.length - 1]]["name"];
                                         }else{
                                                 callerName = "Unmodelled";
-                                        }*/
-                                        callerName = iidToFunInfo[callStack[callStack.length - 1]]["name"] ;
+                                        }
                                 }
 
                                 if (f.name.startsWith("set ") || f.name.startsWith("get ")){
-                                        //Identifying  Non-native -> Setters/Getter Calls 
-                                        callerIid = getLoc(setterGetter[setterGetter.length - 1]);
+                                        //Identifying  Setters/Getters -> Non-native Calls 
+                                        callerIid = iidToFunInfo[setterGetter[setterGetter.length - 1]]["name"] + " " + getLoc(setterGetter[setterGetter.length - 1]);
 
                                 }
                                 else{
                                         //Identifying Native -> Non-native Calls
-                                        callerIid = callerName + " (Native)"
+                                        callerIid = callerName == "Unmodelled"? callerName + " (Native)"  : callerName + " (Native)" + " " + getLoc(callStack[callStack.length - 1])
                                 }
                         }
                         //Identifying Non-native -> Non-native Calls
                         else {
-                                callerIid = getLoc(calleeToCallingLoc[giid])
+                                callerIid = getCallerName() + " " + getLoc(calleeToCallingLoc[giid])
                         }
 
                         //Adding the caller and the callee to the call edge list
-                        calleeIid = getLoc(giid);
+                        calleeIid = iidToFunInfo[giid]["name"] + " " + getLoc(giid);
 
                         if (!(callerIid in callerToCallee)) {
                                 callerToCallee[callerIid] = [];
