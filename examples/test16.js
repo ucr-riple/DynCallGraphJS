@@ -29,3 +29,22 @@
     };
   variadic(ellipsisFun)("one", "two", "three"); // Returns ["one", ["two", "three"]]
 })();
+
+
+/*Expected Output
+{ '(test16.js:1:1:31:5)':
+   [ '(test16.js:1:2:31:2)' ],
+  '(test16.js:30:3:30:24)':
+   [ '(test16.js:3:16:26:6)' ],
+  '(test16.js:30:3:30:47)':
+   [ '(test16.js:13:16:24:10)' ],
+  '(test16.js:15:25:15:63)': [ 'call (Native)' ],
+  '(test16.js:16:40:16:80)': [ 'max (Native)' ],
+  '(test16.js:17:26:17:61)': [ 'Array (Native)' ],
+  '(test16.js:18:28:18:64)': [ 'call (Native)' ],
+  '(test16.js:22:13:22:41)': [ 'concat (Native)' ],
+  '(test16.js:22:13:22:64)': [ 'concat (Native)' ],
+  '(test16.js:20:18:23:12)': [ 'apply (Native)' ],
+  'apply (Native)':
+   [ '(test16.js:27:19:29:6)' ] }
+*/

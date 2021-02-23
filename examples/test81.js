@@ -20,3 +20,14 @@
   var x = o.b;
   x();
 })();
+
+
+/*Expected Output
+{ '(test81.js:1:1:22:5)':
+   [ '(test81.js:1:2:22:2)' ],
+  '(test81.js:10:3:19:5)': [ 'defineProperty (Native)' ],
+  '(test81.js:20:11:20:14)':
+   [ '(test81.js:11:10:13:6)' ],
+  '(test81.js:21:3:21:6)':
+   [ '(test81.js:7:16:9:4)' ] }
+*/
