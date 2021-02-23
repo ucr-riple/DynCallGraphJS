@@ -208,11 +208,11 @@
                                         callerName = "system";
                                 }
                                 else {  //Identifying unmodelled native calls like within Proxy 
-                                        if(iidToFunInfo[callStack[callStack.length - 1]]["type"]=="native"){
+                                        //if(iidToFunInfo[callStack[callStack.length - 1]]["type"]=="native"){
                                                 callerName = iidToFunInfo[callStack[callStack.length - 1]]["name"];
-                                        }else{
+                                        /*}else{
                                                 callerName = "Unmodelled";
-                                        }
+                                        }*/
                                 }
 
                                 if (f.name.startsWith("set ") || f.name.startsWith("get ")){
