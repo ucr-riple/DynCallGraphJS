@@ -165,11 +165,9 @@
                  */
                 invokeFunPre: function (iid, f, base, args, isConstructor, isMethod, functionIid, functionSid) {
                         
-                        var funName = f.name;
                         var giid = J$.getGlobalIID(iid);
                         var fgiid = functionSid+":"+functionIid;
-                        funName = funName == "bound " ? "bound anon" : funName;
-                        //iidToFunInfo[giid] = {"name" : iidToFunInfo[callStack[callStack.length-1]]["name"], "type" : isNative(f) == true ? "native": "non-native"}
+                        var funName = f.name == ""? "anon": f.name == "bound " ? "bound anon" : f.name;
                         
                         if (functionIid!=undefined){
                                 calleeToCallingLoc[fgiid] = giid;
@@ -216,11 +214,12 @@
                                         callerName = "system";
                                 }
                                 else {  //Identifying unmodelled native calls like within Proxy 
-                                        if(iidToFunInfo[callStack[callStack.length - 1]]["type"]=="native"){
+                                        /*if(iidToFunInfo[callStack[callStack.length - 1]]["type"]=="native"){
                                                 callerName = iidToFunInfo[callStack[callStack.length - 1]]["name"];
                                         }else{
                                                 callerName = "Unmodelled";
-                                        }
+                                        }*/
+                                        callerName = iidToFunInfo[callStack[callStack.length - 1]]["name"] ;
                                 }
 
                                 if (f.name.startsWith("set ") || f.name.startsWith("get ")){
@@ -230,7 +229,8 @@
                                 }
                                 else{
                                         //Identifying Native -> Non-native Calls
-                                        callerIid = callerName == "Unmodelled"? callerName + " (Native)"  : callerName + " (Native)" + " " + getLoc(callStack[callStack.length - 1])
+                                        //callerIid = callerName == "Unmodelled"? callerName + " (Native)"  : callerName + " (Native)" + " " + getLoc(callStack[callStack.length - 1])
+                                        callerIid = callerName + " (Native)"
                                 }
                         }
                         //Identifying Non-native -> Non-native Calls

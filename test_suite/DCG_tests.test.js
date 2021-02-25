@@ -25,7 +25,6 @@ describe('DCG Test Suite', () => {
 
     test.each(cases)('test', async (i) => {
         const dcg = await executeDCG(`test${i}.js`)
-        // console.log(dcg)
         strDCG = dcg['stdout'].toString()
         strDCG = strDCG.replace(pathRe, "")
         strDCG = strDCG.replace(/^[^\]{]*/, "")
