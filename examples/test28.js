@@ -35,10 +35,9 @@
    [ 'main (test28.js:10:3:14:4)' ],
   'main (test28.js:11:13:11:54)':
    [ 'apply (Native)(test28.js:11:13:11:54)' ],
-  'apply (Native) (test28.js:11:13:11:54)':
-   [ 'anon (test28.js:6:10:8:6)' ],
+  'apply (Native)':
+   [ 'anon (test28.js:6:10:8:6)',
+     'anon (test28.js:3:10:5:6)' ],
   'main (test28.js:13:5:13:18)':
-   [ 'apply (Native)(test28.js:13:5:13:18)' ],
-  'apply (Native) (test28.js:13:5:13:18)':
-   [ 'anon (test28.js:3:10:5:6)' ] }
+   [ 'apply (Native)(test28.js:13:5:13:18)' ] }
 */

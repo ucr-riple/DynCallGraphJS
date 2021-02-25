@@ -36,14 +36,14 @@ proxy2.method1();
 /*Expected DCG2 Output
 { 'global (test85.js:19:14:19:42)':
    [ 'Proxy (Native)(test85.js:19:14:19:42)' ],
-  'system (Native) undefined':
+  'system (Native)':
    [ 'anon (test85.js:8:8:17:4)' ],
   'global (test85.js:20:1:20:17)':
    [ 'anon (test85.js:13:14:15:8)' ],
   'anon (test85.js:14:16:14:37)':
    [ 'apply (Native)(test85.js:14:16:14:37)' ],
-  'apply (Native) (test85.js:14:16:14:37)':
+  'apply (Native)':
    [ 'method1 (test85.js:3:12:5:4)' ],
-  'Unmodelled (Native)':
+  'method1 (Native)':
    [ 'anon (test85.js:8:8:17:4)' ] }
 */

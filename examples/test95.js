@@ -59,6 +59,6 @@
    [ 'anon (evalIndirect(test95.js:14:12:14:45):1:2:17:33)' ],
   'anon (test95.js:18:3:18:10)':
    [ 'anon (evalIndirect(test95.js:14:12:14:45):1:22:17:30)' ],
-  'Unmodelled (Native)':
+  'anon (Native)':
    [ 'anon (evalIndirect(test95.js:14:12:14:45):iid177)' ] }
 */
