@@ -16,7 +16,7 @@ function test() {
 test();
 
 
-/*Expected Output
+/*Expected DCG Output
 {
   '(test11.js:16:1:16:7)': [
     '(test11.js:4:1:15:2)'
@@ -34,4 +34,17 @@ test();
     '(test11.js:1:1:3:2)'
   ]
 }
+*/
+
+/*Expected DCG2 Output
+{ 'global (test11.js:16:1:16:7)':
+   [ 'test (test11.js:4:1:15:2)' ],
+  'test (test11.js:6:5:6:11)':
+   [ 'foo (test11.js:1:1:3:2)' ],
+  'test (test11.js:8:7:8:13)':
+   [ 'foo (test11.js:1:1:3:2)' ],
+  'test (test11.js:10:7:10:13)':
+   [ 'foo (test11.js:1:1:3:2)' ],
+  'test (test11.js:13:5:13:11)':
+   [ 'foo (test11.js:1:1:3:2)' ] }
 */

@@ -16,11 +16,20 @@
 })();
 
 
-/*Expected Output
+/*Expected DCG Output
 { '(test97.js:1:1:16:5)':
    [ '(test97.js:1:2:16:2)' ],
   '(test97.js:15:3:15:16)':
    [ '(test97.js:3:10:5:6)' ],
   '(test97.js:4:7:4:10)':
    [ '(test97.js:6:10:8:6)' ] }
+*/
+
+/*Expected DCG2 Output
+{ 'global (test97.js:1:1:16:5)':
+   [ 'anon (test97.js:1:2:16:2)' ],
+  'anon (test97.js:15:3:15:16)':
+   [ 'anon (test97.js:3:10:5:6)' ],
+  'anon (test97.js:4:7:4:10)':
+   [ 'anon (test97.js:6:10:8:6)' ] }
 */

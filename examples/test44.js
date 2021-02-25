@@ -8,9 +8,18 @@ var x = function () {
 x();
 
 
-/*Expected Output
+/*Expected DCG Output
 { '(test44.js:5:9:7:13)': [ 'bind (Native)' ],
   '(test44.js:8:1:8:4)': [ 'bound anon (Native)' ],
   'bound anon (Native)':
    [ '(test44.js:5:9:7:2)' ] }
+*/
+
+/*Expected DCG2 Output
+{ 'global (test44.js:5:9:7:13)':
+   [ 'bind (Native)(test44.js:5:9:7:13)' ],
+  'global (test44.js:8:1:8:4)':
+   [ 'bound anon (Native)(test44.js:8:1:8:4)' ],
+  'bound anon (Native) (test44.js:8:1:8:4)':
+   [ 'anon (test44.js:5:9:7:2)' ] }
 */

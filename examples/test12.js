@@ -9,7 +9,7 @@ var book = new Book("Fiction", "Peter King");
 book.getDetails(); // => Fiction written by Peter King
 
 
-/*Expected Output
+/*Expected DCG Output
 {
   '(test12.js:8:12:8:45)': [
     '(test12.js:1:1:7:2)'
@@ -18,4 +18,11 @@ book.getDetails(); // => Fiction written by Peter King
     '(test12.js:4:21:6:4)'
   ]
 }
+*/
+
+/*Expected DCG2 Output
+{ 'global (test12.js:8:12:8:45)':
+   [ 'Book (test12.js:1:1:7:2)' ],
+  'global (test12.js:9:1:9:18)':
+   [ 'anon (test12.js:4:21:6:4)' ] }
 */

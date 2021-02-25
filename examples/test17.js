@@ -15,9 +15,16 @@ bar = function () {
 m("foo");
 
 
-/*Expected Output
+/*Expected DCG Output
 { '(test17.js:15:1:15:9)':
    [ '(test17.js:5:9:7:2)' ],
   '(test17.js:6:16:6:21)':
    [ '(test17.js:9:7:11:2)' ] }
+*/
+
+/*Expected DCG2 Output
+{ 'global (test17.js:15:1:15:9)':
+   [ 'f2 (test17.js:5:9:7:2)' ],
+  'f2 (test17.js:6:16:6:21)':
+   [ 'anon (test17.js:9:7:11:2)' ] }
 */

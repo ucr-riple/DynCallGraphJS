@@ -22,7 +22,7 @@ for(key in obj){ //For-In Loop
 }
 main("MyPhone")
 
-/*Expected Output
+/*Expected DCG Output
 { '(test52.js:23:1:23:16)':
    [ '(test52.js:1:1:22:2)' ],
   '(test52.js:11:1:11:14)':
@@ -38,4 +38,22 @@ main("MyPhone")
   '(test52.js:20:9:20:19)':
    [ '(test52.js:3:16:5:10)',
      '(test52.js:6:17:8:10)' ] }
+*/
+
+/*Expected DCG2 Output
+{ 'global (test52.js:23:1:23:16)':
+   [ 'main (test52.js:1:1:22:2)' ],
+  'main (test52.js:11:1:11:14)':
+   [ 'anon (test52.js:3:16:5:10)' ],
+  'main (test52.js:15:5:15:18)':
+   [ 'anon (test52.js:12:19:14:2)' ],
+  'main (test52.js:15:1:15:21)':
+   [ 'anon (test52.js:6:17:8:10)' ],
+  'main (test52.js:16:1:16:19)':
+   [ 'anon (test52.js:3:16:5:10)' ],
+  'main (test52.js:17:1:17:16)':
+   [ 'anon (test52.js:6:17:8:10)' ],
+  'main (test52.js:20:9:20:19)':
+   [ 'anon (test52.js:3:16:5:10)',
+     'anon (test52.js:6:17:8:10)' ] }
 */

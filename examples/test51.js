@@ -13,11 +13,20 @@ function main() {
 main();
 
 
-/*Expected Output
+/*Expected DCG Output
 { '(test51.js:13:1:13:7)':
    [ '(test51.js:1:1:12:2)' ],
   '(test51.js:10:3:10:23)':
    [ '(test51.js:3:13:5:6)' ],
   '(test51.js:11:3:11:19)':
    [ '(test51.js:6:14:8:6)' ] }
+*/
+
+/*Expected DCG2 Output
+{ 'global (test51.js:13:1:13:7)':
+   [ 'main (test51.js:1:1:12:2)' ],
+  'main (test51.js:10:3:10:23)':
+   [ 'anon (test51.js:3:13:5:6)' ],
+  'main (test51.js:11:3:11:19)':
+   [ 'anon (test51.js:6:14:8:6)' ] }
 */
