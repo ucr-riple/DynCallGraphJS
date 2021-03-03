@@ -163,7 +163,7 @@
                         var fgiid = functionSid+":"+functionIid;
                         var funName = f.name == ""? "anon": f.name == "bound " ? "bound anon" : f.name;
                         //iidToFunInfo[giid] = {"name" : (funName == "" ? "anon" : funName), "type" : isNative(f) == true ? "native": "non-native"}
-                        
+                        //console.log("here",f.name,getLoc(giid),calleeToCallingLoc[giid],iidToFunInfo[callStack[callStack.length - 1]])
                         if (functionIid!=undefined){
                                 calleeToCallingLoc[fgiid] = giid;
                         }
@@ -171,7 +171,7 @@
                         if (isNative(f)) {
                                 callerIid = getLoc(giid);
                                 calleeIid = funName + " (Native)"
-                                console.log(callerIid)
+
                                 iidToFunInfo[giid] = {"name" : (funName == "" ? "anon" : funName), "type" : isNative(f) == true ? "native": "non-native"}
                                 //Adding the caller and the callee to the call edge list
                                 if (!(callerIid in callerToCallee)) {
@@ -201,7 +201,7 @@
                         var funName = f.name;
                         var giid = J$.getGlobalIID(iid);
                         iidToFunInfo[giid] = {"name" : (funName == "" ? "anon" : funName), "type" : isNative(f) == true ? "native": "non-native"}
-
+                        //console.log(f.name,getLoc(giid),calleeToCallingLoc[giid],iidToFunInfo[callStack[callStack.length - 1]])
                         if (calleeToCallingLoc[giid] == undefined) {
                                 //If the CallStack is empty, when a function is called , the caller name is assigned as "system"
                                 if (callStack.length === 0) {
