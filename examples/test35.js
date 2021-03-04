@@ -1,14 +1,14 @@
 var arrayOfFunction = [
   function () {
-    console.log("Inside First function");
+    return("Inside First function");
   },
 
   function () {
-    console.log("Inside Second function");
+    return("Inside Second function");
   },
 
   function () {
-    console.log("Inside Third function");
+    return("Inside Third function");
   },
 ];
 var x = function () {

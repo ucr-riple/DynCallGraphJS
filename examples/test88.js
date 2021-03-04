@@ -5,7 +5,7 @@ function Monster() {
 var handler1 = {
   set: function set(obj, prop, value) {
     if (prop === "eyeCount" && value % 2 !== 0) {
-      console.log("Monsters must have an even number of eyes");
+      return("Monsters must have an even number of eyes");
     } else {
       return Reflect.set.apply(Reflect, arguments);
     }
