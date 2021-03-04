@@ -35,5 +35,5 @@ describe('DCG Test Suite', () => {
 })
 
 async function executeDCG(testFile){
-    return await exec(`node node_modules/jalangi2/src/js/commands/jalangi.js --inlineIID --inlineSource --analysis DCG.js examples/${testFile}`)
+    return await exec(`node node_modules/jalangi2/src/js/commands/jalangi.js --inlineIID --inlineSource --analysis src/DCG.js examples/${testFile}`)
 }
