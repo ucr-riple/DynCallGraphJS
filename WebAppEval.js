@@ -13,7 +13,7 @@ var options = {
         inlineIID: true,
         inlineSource: true,
         inlineJalangi: true,
-        analysis: ['./node_modules/jalangi2/src/js/sample_analyses/ChainedAnalyses.js', './node_modules/jalangi2/src/js/sample_analyses/dlint/Utils.js', './DCG.js'],
+        analysis: ['./node_modules/jalangi2/src/js/sample_analyses/ChainedAnalyses.js', './node_modules/jalangi2/src/js/sample_analyses/dlint/Utils.js', './src/DCG.js'],
         outputDir: '/tmp',
         inputFiles: inputDir
 };
