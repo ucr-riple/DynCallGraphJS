@@ -1,6 +1,8 @@
 # DynCallGraphJS
 A dynamic call graph generator using Jalangi2
 
+[![Build Status](https://travis-ci.org/{ucr-riple}/{DynCallGraphJS}.png?branch=master)](https://travis-ci.org/{ucr-riple}/{DynCallGraphJS})
+
 ## Installation
 Clone the repository, and then run:
 
