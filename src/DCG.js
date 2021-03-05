@@ -162,7 +162,6 @@
                         var giid = J$.getGlobalIID(iid);
                         var fgiid = functionSid+":"+functionIid;
                         var funName = f.name == ""? "anon": f.name == "bound " ? "bound anon" : f.name;
-                        //iidToFunInfo[giid] = {"name" : (funName == "" ? "anon" : funName), "type" : isNative(f) == true ? "native": "non-native"}
                         //console.log("here",f.name,getLoc(giid),calleeToCallingLoc[giid],iidToFunInfo[callStack[callStack.length - 1]])
                         if (functionIid!=undefined){
                                 calleeToCallingLoc[fgiid] = giid;

@@ -51,7 +51,7 @@ var options = {
     });
   });
   data = (await page.evaluate('J$.callList'));
-  fs.writeFile(outpath, JSON.stringify(data), function (err) {
+  fs.writeFile(outpath, JSON.stringify(data,null,4), function (err) {
     if (err) throw err;
     console.log('complete');
   });
