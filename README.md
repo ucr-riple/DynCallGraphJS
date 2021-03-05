@@ -19,6 +19,10 @@ node node_modules/jalangi2/src/js/commands/instrument.js --inlineIID --inlineSou
 
 open file:///tmp/html/index.html
 ```
+For web applications you can also out puppeteer based script which allows you to retrieve the results in a JSON file
+```bash
+node scripts/WebappEval.js examples/html/ file:///tmp/html/index.html temp.json
+```
 
 ## Output Format
 The DCG is represented as list of objects where each key is a calling Location and the values are the called functions. The Native functions do not have an address associated with them and are represented as ``` FunctionName (Native) ``` and non-native functions are represented as ```(file:startrow:startcolumn:endrow:endcolumn) ```
