@@ -4,7 +4,7 @@ var app = express();
 const fs = require('fs');
 const path = require('path');
 const process = require('process');
-var jalangi = require('./node_modules/jalangi2/src/js/utils/api');
+var jalangi = require('jalangi2');
 var root = "/tmp"
 var inputDir =[]
 inputDir.push(process.argv[2])
@@ -58,4 +58,4 @@ var options = {
   await browser.close();
 })();
 
-//node WebappEval.js file/to/read/ output/path
+//node scripts/WebappEval.js file/to/read/ output/path
