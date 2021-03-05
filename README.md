@@ -25,25 +25,23 @@ The DCG is represented as list of objects where each key is a calling Location a
 
 ### Sample Run
 
-```
-function foo(baz) {
-  return baz();
+```javascript
+function foo() {
+  return;
 }
 function bar() {
-  return "bar";
+  foo.call(this);
 }
-foo(bar);
+bar();
 ```
 The above program would have a Dynamic Call Graph as follows:
-{
-  '(test2.js:7:1:7:9)': [
-    '(test2.js:1:1:3:2)'
-  ],
-  '(test2.js:2:10:2:15)': [
-    '(test2.js:4:1:6:2)'
-  ]
-}
-
+```
+{ '(/testDirectory/testFile.js:7:1:7:6)':
+   [ '(/testDirectory/testFile.js:4:1:6:2)' ],
+  '(/testDirectory/testFile:5:3:5:17)': [ 'call (Native)' ],
+  'call (Native)':
+   [ '(testDirectory/testFile.js:1:1:3:2)' ] }
+```
 
 
 
