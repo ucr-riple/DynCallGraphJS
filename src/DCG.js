@@ -1,3 +1,9 @@
+/**
+ * @file An analysis built on top of Jalangi to generate the dynamic call graph of JavaScript based applications.
+ * The call graph is in the format: Calling Location -> Callee Function Definition Location. For Native function call, only name of the 
+ * native function is provided.
+ *
+ */
 (function () {
         //Datastructure Listing
         var callerToCallee = Object.create(null); // Caller name@location => Callee name@location
@@ -14,7 +20,6 @@
         var callerIid = "";
         var calleeIid = "";
         var calleeIids = "";
-        var format = /(?!\()(\S+\.js)\:([0-9]+\:[0-9]+\:[0-9]+\:[0-9]+)\)/gi;
 
         var SPECIAL_PROP_SID = J$.Constants.SPECIAL_PROP_SID;
         var SPECIAL_PROP_IID = J$.Constants.SPECIAL_PROP_IID;
@@ -162,7 +167,7 @@
                         var giid = J$.getGlobalIID(iid);
                         var fgiid = functionSid+":"+functionIid;
                         var funName = f.name == ""? "anon": f.name == "bound " ? "bound anon" : f.name;
-                        //console.log("here",f.name,getLoc(giid),calleeToCallingLoc[giid],iidToFunInfo[callStack[callStack.length - 1]])
+
                         if (functionIid!=undefined){
                                 calleeToCallingLoc[fgiid] = giid;
                         }
@@ -200,7 +205,7 @@
                         var funName = f.name;
                         var giid = J$.getGlobalIID(iid);
                         iidToFunInfo[giid] = {"name" : (funName == "" ? "anon" : funName), "type" : isNative(f) == true ? "native": "non-native"}
-                        //console.log(f.name,getLoc(giid),calleeToCallingLoc[giid],iidToFunInfo[callStack[callStack.length - 1]])
+
                         if (calleeToCallingLoc[giid] == undefined) {
                                 //If the CallStack is empty, when a function is called , the caller name is assigned as "system"
                                 if (callStack.length === 0) {
@@ -361,7 +366,7 @@
 }());
 
 /*
-node src/js/commands/jalangi.js --inlineIID --inlineSource --analysis DCG.js experiments/example.js
-node src/js/commands/instrument.js --inlineIID --inlineSource -i --inlineJalangi --analysis src/js/sample_analyses/ChainedAnalyses.js --analysis src/js/sample_analyses/dlint/Utils.js --analysis DynNative.js --outputDir /tmp experiments/html/
+node src/js/commands/jalangi.js --inlineIID --inlineSource --analysis DCG.js examples/example.js
+node src/js/commands/instrument.js --inlineIID --inlineSource -i --inlineJalangi --analysis src/js/sample_analyses/ChainedAnalyses.js --analysis src/js/sample_analyses/dlint/Utils.js --analysis src/DCG.js --outputDir /tmp examples/html/
 open file:///tmp/html/index.html
 */
