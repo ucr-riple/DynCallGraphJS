@@ -1,3 +1,9 @@
+/**
+ * @file An analysis built on top of Jalangi to generate the dynamic call graph of JavaScript based applications.
+ * The call graph is in the format: Calling Location -> Callee Function Definition Location. For Native function call, the 
+ * definition location of the function is same as where it was invoked.
+ * 
+ */
 (function () {
         //Datastructure Listing
         var callerToCallee = Object.create(null); // Caller name@location => Callee name@location
