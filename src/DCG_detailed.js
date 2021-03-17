@@ -170,7 +170,7 @@
                  * @returns {undefined} - Any return value is ignored
                  */
                 invokeFunPre: function (iid, f, base, args, isConstructor, isMethod, functionIid, functionSid) {
-                        
+                        console.log(iid,f,f.name)
                         var giid = J$.getGlobalIID(iid);
                         var fgiid = functionSid+":"+functionIid;
                         var funName = f.name == ""? "anon": f.name == "bound " ? "bound anon" : f.name;
@@ -375,7 +375,7 @@
 }());
 
 /*
-node src/js/commands/jalangi.js --inlineIID --inlineSource --analysis DCG.js experiments/example.js
-node src/js/commands/instrument.js --inlineIID --inlineSource -i --inlineJalangi --analysis src/js/sample_analyses/ChainedAnalyses.js --analysis src/js/sample_analyses/dlint/Utils.js --analysis DynNative.js --outputDir /tmp experiments/html/
+node src/js/commands/jalangi.js --inlineIID --inlineSource --analysis DCG_detailed.js experiments/example.js
+node src/js/commands/instrument.js --inlineIID --inlineSource -i --inlineJalangi --analysis src/js/sample_analyses/ChainedAnalyses.js --analysis src/js/sample_analyses/dlint/Utils.js --analysis DCG_detailed.js --outputDir /tmp experiments/html/
 open file:///tmp/html/index.html
 */
