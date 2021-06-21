@@ -1,7 +1,7 @@
 # DynCallGraphJS
 A dynamic call graph generator using Jalangi2
 
-[![Node.js CI](https://github.com/ucr-riple/DynCallGraphJS/actions/workflows/ci.yml/badge.svg)](https://github.com/ucr-riple/DynCallGraphJS/actions/workflows/ci.yml)
+[![Node.js CI](https://github.com/ucr-riple/DynCallGraphJS/actions/workflows/ci.yml/badge.svg)](https://github.com/ucr-riple/DynCallGraphJS/actions/workflows/ci.yml) 
 
 ## Installation
 Clone the repository, and then run:
@@ -49,5 +49,9 @@ The above program would have a Dynamic Call Graph as follows:
    [ '(testDirectory/testFile.js:1:1:3:2)' ] }
 ```
 
-
+## Work in Progress
+We are still working on DCG_detailed.js which provides the function names for non-native functions and location identifier for native functions. It would allow you to identify the non-native functions by name and distinguish between two native callers. You can use DCG_detailed the same way as DCG.
+```bash
+node node_modules/jalangi2/src/js/commands/jalangi.js --inlineIID --inlineSource --analysis src/DCG.js examples/example1.js
+```
 
