@@ -52,6 +52,6 @@ The above program would have a Dynamic Call Graph as follows:
 ## Work in Progress
 We are still working on DCG_detailed.js which provides the function names for non-native functions and location identifier for native functions. It would allow you to identify the non-native functions by name and distinguish between two native callers. You can use DCG_detailed the same way as DCG.
 ```bash
-node node_modules/jalangi2/src/js/commands/jalangi.js --inlineIID --inlineSource --analysis src/DCG.js examples/example1.js
+node node_modules/jalangi2/src/js/commands/jalangi.js --inlineIID --inlineSource --analysis src/DCG_detailed.js examples/example1.js
 ```
 
