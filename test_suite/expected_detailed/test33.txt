@@ -1,0 +1,5 @@
+{
+    'global (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test33.js:8:1:8:20)': [
+        'anon (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test33.js:4:26:6:4)'
+    ]
+}

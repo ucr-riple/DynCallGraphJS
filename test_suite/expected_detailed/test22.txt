@@ -1,0 +1,8 @@
+{
+    'global (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test22.js:8:15:8:33)': [
+        'create (Native)(/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test22.js:8:15:8:33)'
+    ],
+    'global (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test22.js:9:1:9:22)': [
+        'showDetails (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test22.js:3:16:5:4)'
+    ]
+}

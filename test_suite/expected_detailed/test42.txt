@@ -1,0 +1,11 @@
+{
+    'global (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test42.js:8:16:8:56)': [
+        'call (Native)(/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test42.js:8:16:8:56)'
+    ],
+    'global (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test42.js:9:1:9:11)': [
+        'bound func (Native)(/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test42.js:9:1:9:11)'
+    ],
+    'bound func (Native) (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test42.js:9:1:9:11)': [
+        'func (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test42.js:5:1:7:2)'
+    ]
+}

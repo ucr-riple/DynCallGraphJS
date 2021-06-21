@@ -1,0 +1,8 @@
+{
+    'global (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test27.js:4:1:4:61)': [
+        'call (Native)(/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test27.js:4:1:4:61)'
+    ],
+    'call (Native) (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test27.js:4:1:4:61)': [
+        'foo (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test27.js:1:1:3:2)'
+    ]
+}

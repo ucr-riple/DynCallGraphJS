@@ -1,0 +1,5 @@
+{
+    'get foo (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test5.js:9:1:9:8)': [
+        'get foo (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test5.js:4:13:6:4)'
+    ]
+}

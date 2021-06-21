@@ -1,0 +1,8 @@
+{
+    'global (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test61.js:13:1:13:6)': [
+        'foo (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test61.js:8:1:12:2)'
+    ],
+    'foo (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test61.js:10:9:10:16)': [
+        'bar (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test61.js:4:1:6:2)'
+    ]
+}

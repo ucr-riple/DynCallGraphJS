@@ -1,0 +1,11 @@
+{
+    'global (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test3.js:14:1:14:6)': [
+        'anon (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test3.js:11:11:13:2)'
+    ],
+    'anon (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test3.js:12:10:12:19)': [
+        'bar (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test3.js:1:1:10:2)'
+    ],
+    'global (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test3.js:14:1:14:8)': [
+        'anon (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test3.js:3:5:5:6)'
+    ]
+}

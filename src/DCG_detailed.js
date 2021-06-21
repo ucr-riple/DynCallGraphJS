@@ -170,7 +170,7 @@
                  * @returns {undefined} - Any return value is ignored
                  */
                 invokeFunPre: function (iid, f, base, args, isConstructor, isMethod, functionIid, functionSid) {
-                        console.log(iid,f,f.name)
+
                         var giid = J$.getGlobalIID(iid);
                         var fgiid = functionSid+":"+functionIid;
                         var funName = f.name == ""? "anon": f.name == "bound " ? "bound anon" : f.name;
@@ -219,12 +219,7 @@
                                 if (callStack.length === 0) {
                                         callerName = "system";
                                 }
-                                else {  //Identifying unmodelled native calls like within Proxy 
-                                        /*if(iidToFunInfo[callStack[callStack.length - 1]]["type"]=="native"){
-                                                callerName = iidToFunInfo[callStack[callStack.length - 1]]["name"];
-                                        }else{
-                                                callerName = "Unmodelled";
-                                        }*/
+                                else {  
                                         callerName = iidToFunInfo[callStack[callStack.length - 1]]["name"] ;
                                 }
 
@@ -235,8 +230,7 @@
                                 }
                                 else{
                                         //Identifying Native -> Non-native Calls
-                                        //callerIid = callerName == "Unmodelled"? callerName + " (Native)"  : callerName + " (Native)" + " " + getLoc(callStack[callStack.length - 1])
-                                        callerIid = callerName + " (Native)"
+                                        callerIid = ["<unmodelled function>","system","anon"].includes(callerName) ? callerName + " (Native)"  : callerName + " (Native)" + " " + getLoc(callStack[callStack.length - 1])
                                 }
                         }
                         //Identifying Non-native -> Non-native Calls
@@ -343,7 +337,6 @@
                  */
                 scriptExit: function (iid, wrappedExceptionVal) {
                         callStack.pop();
-                        //return {};
                 },
                 /**
                  * @desc Writes the output to a json file 
@@ -356,15 +349,7 @@
                                         jsonCallList[caller]=callerToCallee[caller];
                                         }
                         }
-                        //Writing the output to a file
-                        /*if (!isBrowser) {
-                                var jsonString = JSON.stringify(jsonCallList,null,4)
-                                origName = process.argv[1];
-                                instname = origName.replace(/.js$/, "_dynCalls.json");
-                                fs.writeFileSync(instname, jsonString, function(err) {
-                                        if(err) console.log('error', err);
-                                      });
-                        }*/
+                        //Writing the output to console
                         J$.callList=jsonCallList
                         console.log(jsonCallList)
                         return J$.callList

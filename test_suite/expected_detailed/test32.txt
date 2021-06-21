@@ -1,0 +1,8 @@
+{
+    'global (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test32.js:9:1:11:3)': [
+        'unshift (Native)(/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test32.js:9:1:11:3)'
+    ],
+    'global (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test32.js:12:1:12:21)': [
+        'anon (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test32.js:9:25:11:2)'
+    ]
+}

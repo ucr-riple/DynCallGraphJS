@@ -211,12 +211,7 @@
                                 if (callStack.length === 0) {
                                         callerName = "system";
                                 }
-                                else {  //Identifying unmodelled native calls like within Proxy 
-                                        /*if(iidToFunInfo[callStack[callStack.length - 1]]["type"]=="native"){
-                                                callerName = iidToFunInfo[callStack[callStack.length - 1]]["name"];
-                                        }else{
-                                                callerName = "Unmodelled";
-                                        }*/
+                                else {  
                                         callerName = iidToFunInfo[callStack[callStack.length - 1]]["name"] ;
                                 }
 
@@ -334,7 +329,6 @@
                  */
                 scriptExit: function (iid, wrappedExceptionVal) {
                         callStack.pop();
-                        //return {};
                 },
                 /**
                  * @desc Writes the output to a json file 
@@ -347,15 +341,7 @@
                                         jsonCallList[caller]=callerToCallee[caller];
                                         }
                         }
-                        //Writing the output to a file
-                        /*if (!isBrowser) {
-                                var jsonString = JSON.stringify(jsonCallList,null,4)
-                                origName = process.argv[1];
-                                instname = origName.replace(/.js$/, "_dynCalls.json");
-                                fs.writeFileSync(instname, jsonString, function(err) {
-                                        if(err) console.log('error', err);
-                                      });
-                        }*/
+                        //Writing the output to console
                         J$.callList=jsonCallList
                         console.log(jsonCallList)
                         return J$.callList
@@ -366,7 +352,7 @@
 }());
 
 /*
-node src/js/commands/jalangi.js --inlineIID --inlineSource --analysis DCG.js examples/example.js
+node src/js/commands/jalangi.js --inlineIID --inlineSource --analysis DCG.js examples/test1.js
 node src/js/commands/instrument.js --inlineIID --inlineSource -i --inlineJalangi --analysis src/js/sample_analyses/ChainedAnalyses.js --analysis src/js/sample_analyses/dlint/Utils.js --analysis src/DCG.js --outputDir /tmp examples/html/
 open file:///tmp/html/index.html
 */
