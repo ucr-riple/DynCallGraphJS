@@ -2,7 +2,6 @@
 A dynamic call graph generator using Jalangi2
 
 [![Node.js CI](https://github.com/ucr-riple/DynCallGraphJS/actions/workflows/ci.yml/badge.svg)](https://github.com/ucr-riple/DynCallGraphJS/actions/workflows/ci.yml) 
-<img src="https://img.shields.io/badge/Maintained%3F-yes%20-brightgreen"></img>
 
 ## Installation
 Clone the repository, and then run:
