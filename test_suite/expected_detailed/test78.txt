@@ -1,8 +1,8 @@
 {
-    'global (eval(/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test78.js:1:6:1:54):1:12:1:37)': [
-        'Function (Native)(eval(/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test78.js:1:6:1:54):1:12:1:37)'
+    'global (eval(test78.js:1:6:1:54):1:12:1:37)': [
+        'Function (Native)(eval(test78.js:1:6:1:54):1:12:1:37)'
     ],
-    'global (eval(/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test78.js:1:6:1:54):1:39:1:44)': [
-        'anon (evalIndirect(eval(/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test78.js:1:6:1:54):1:12:1:37):1:2:1:26)'
+    'global (eval(test78.js:1:6:1:54):1:39:1:44)': [
+        'anon (evalIndirect(eval(test78.js:1:6:1:54):1:12:1:37):1:2:1:26)'
     ]
 }

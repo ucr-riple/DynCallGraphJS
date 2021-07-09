@@ -1,20 +1,20 @@
 {
-    'global (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test54.js:1:1:9:11)': [
-        'anon (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test54.js:1:2:9:8)'
+    'global (test54.js:1:1:9:11)': [
+        'anon (test54.js:1:2:9:8)'
     ],
-    'anon (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test54.js:8:9:8:15)': [
-        'main (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test54.js:2:9:7:10)'
+    'anon (test54.js:8:9:8:15)': [
+        'main (test54.js:2:9:7:10)'
     ],
-    'main (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test54.js:6:11:6:30)': [
-        'anon (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test54.js:5:19:5:50)'
+    'main (test54.js:6:11:6:30)': [
+        'anon (test54.js:5:19:5:50)'
     ],
-    'anon (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test54.js:5:42:5:47)': [
-        'anon (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test54.js:6:13:6:29)'
+    'anon (test54.js:5:42:5:47)': [
+        'anon (test54.js:6:13:6:29)'
     ],
-    'anon (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test54.js:6:24:6:28)': [
-        'anon (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test54.js:4:19:4:49)'
+    'anon (test54.js:6:24:6:28)': [
+        'anon (test54.js:4:19:4:49)'
     ],
-    'anon (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test54.js:4:42:4:47)': [
-        'anon (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test54.js:3:19:3:43)'
+    'anon (test54.js:4:42:4:47)': [
+        'anon (test54.js:3:19:3:43)'
     ]
 }

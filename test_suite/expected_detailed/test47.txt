@@ -1,11 +1,11 @@
 {
-    'global (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test47.js:10:1:10:13)': [
-        'checkscope (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test47.js:4:1:9:2)'
+    'global (test47.js:10:1:10:13)': [
+        'checkscope (test47.js:4:1:9:2)'
     ],
-    'checkscope (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test47.js:8:3:8:10)': [
-        'anon (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test47.js:5:15:7:4)'
+    'checkscope (test47.js:8:3:8:10)': [
+        'anon (test47.js:5:15:7:4)'
     ],
-    'global (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test47.js:11:1:11:8)': [
-        'anon (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test47.js:1:13:3:2)'
+    'global (test47.js:11:1:11:8)': [
+        'anon (test47.js:1:13:3:2)'
     ]
 }

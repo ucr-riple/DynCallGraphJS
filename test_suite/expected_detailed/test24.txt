@@ -1,11 +1,11 @@
 {
-    'global (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test24.js:1:1:9:5)': [
-        'anon (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test24.js:1:2:9:2)'
+    'global (test24.js:1:1:9:5)': [
+        'anon (test24.js:1:2:9:2)'
     ],
-    'anon (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test24.js:8:3:8:11)': [
-        'foo (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test24.js:2:3:4:4)'
+    'anon (test24.js:8:3:8:11)': [
+        'foo (test24.js:2:3:4:4)'
     ],
-    'foo (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test24.js:3:5:3:12)': [
-        'anon (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test24.js:5:13:7:4)'
+    'foo (test24.js:3:5:3:12)': [
+        'anon (test24.js:5:13:7:4)'
     ]
 }

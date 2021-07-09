@@ -1,11 +1,11 @@
 {
-    'global (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test20.js:11:1:11:12)': [
-        'main (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test20.js:7:1:9:2)'
+    'global (test20.js:11:1:11:12)': [
+        'main (test20.js:7:1:9:2)'
     ],
-    'main (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test20.js:8:27:8:41)': [
-        'call (Native)(/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test20.js:8:27:8:41)'
+    'main (test20.js:8:27:8:41)': [
+        'call (Native)(test20.js:8:27:8:41)'
     ],
-    'call (Native) (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test20.js:8:27:8:41)': [
-        'bar (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test20.js:4:1:6:2)'
+    'call (Native) (test20.js:8:27:8:41)': [
+        'bar (test20.js:4:1:6:2)'
     ]
 }

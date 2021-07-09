@@ -1,0 +1,18 @@
+{ 
+   'global (test99.js:1:1:16:5)':
+   [ 'anon (test99.js:1:2:16:2)' ],
+  'anon (test99.js:13:3:13:16)':
+   [ 'myFunction1 (test99.js:3:3:5:10)' ],
+  'myFunction1 (test99.js:4:20:4:65)':
+   [ 'setTimeout (Native)(test99.js:4:20:4:65)' ],
+  'anon (test99.js:14:3:14:16)':
+   [ 'myFunction2 (test99.js:6:3:12:4)' ],
+  'myFunction2 (test99.js:8:18:11:19)':
+   [ 'setInterval (Native)(test99.js:8:18:11:19)' ],
+  'anon (test99.js:15:3:15:23)':
+   [ 'clearTimeout (Native)(test99.js:15:3:15:23)' ],
+  'system (Native)':
+   [ 'anon (test99.js:8:30:11:14)' ],
+  'anon (test99.js:10:15:10:38)':
+   [ 'clearInterval (Native)(test99.js:10:15:10:38)' ] 
+}

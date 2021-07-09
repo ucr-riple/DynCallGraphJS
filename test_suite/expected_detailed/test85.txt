@@ -1,20 +1,20 @@
 {
-    'global (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test85.js:19:14:19:42)': [
-        'Proxy (Native)(/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test85.js:19:14:19:42)'
+    'global (test85.js:19:14:19:42)': [
+        'Proxy (Native)(test85.js:19:14:19:42)'
     ],
     'system (Native)': [
-        'anon (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test85.js:8:8:17:4)'
+        'anon (test85.js:8:8:17:4)'
     ],
-    'global (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test85.js:20:1:20:17)': [
-        'anon (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test85.js:13:14:15:8)'
+    'global (test85.js:20:1:20:17)': [
+        'anon (test85.js:13:14:15:8)'
     ],
-    'anon (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test85.js:14:16:14:37)': [
-        'apply (Native)(/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test85.js:14:16:14:37)'
+    'anon (test85.js:14:16:14:37)': [
+        'apply (Native)(test85.js:14:16:14:37)'
     ],
-    'apply (Native) (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test85.js:14:16:14:37)': [
-        'method1 (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test85.js:3:12:5:4)'
+    'apply (Native) (test85.js:14:16:14:37)': [
+        'method1 (test85.js:3:12:5:4)'
     ],
-    'method1 (Native) (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test85.js:3:12:5:4)': [
-        'anon (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test85.js:8:8:17:4)'
+    'method1 (Native) (test85.js:3:12:5:4)': [
+        'anon (test85.js:8:8:17:4)'
     ]
 }

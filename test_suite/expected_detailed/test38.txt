@@ -1,11 +1,11 @@
 {
-    'global (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test38.js:9:1:11:3)': [
-        'push (Native)(/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test38.js:9:1:11:3)'
+    'global (test38.js:9:1:11:3)': [
+        'push (Native)(test38.js:9:1:11:3)'
     ],
-    'global (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test38.js:12:1:12:30)': [
-        'call (Native)(/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test38.js:12:1:12:30)'
+    'global (test38.js:12:1:12:30)': [
+        'call (Native)(test38.js:12:1:12:30)'
     ],
-    'call (Native) (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test38.js:12:1:12:30)': [
-        'anon (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test38.js:9:22:11:2)'
+    'call (Native) (test38.js:12:1:12:30)': [
+        'anon (test38.js:9:22:11:2)'
     ]
 }

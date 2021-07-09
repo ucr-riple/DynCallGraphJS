@@ -1,11 +1,11 @@
 {
-    'global (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test48.js:8:15:8:28)': [
-        'makeCounter (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test48.js:1:1:6:2)'
+    'global (test48.js:8:15:8:28)': [
+        'makeCounter (test48.js:1:1:6:2)'
     ],
-    'global (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test48.js:9:1:9:10)': [
-        'anon (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test48.js:3:10:5:4)'
+    'global (test48.js:9:1:9:10)': [
+        'anon (test48.js:3:10:5:4)'
     ],
-    'global (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test48.js:10:1:10:10)': [
-        'anon (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test48.js:3:10:5:4)'
+    'global (test48.js:10:1:10:10)': [
+        'anon (test48.js:3:10:5:4)'
     ]
 }

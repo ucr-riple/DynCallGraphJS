@@ -1,14 +1,14 @@
 {
-    'global (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test91.js:1:1:9:5)': [
-        'anon (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test91.js:1:2:9:2)'
+    'global (test91.js:1:1:9:5)': [
+        'anon (test91.js:1:2:9:2)'
     ],
-    'anon (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test91.js:7:13:7:18)': [
-        'foo (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test91.js:2:3:6:4)'
+    'anon (test91.js:7:13:7:18)': [
+        'foo (test91.js:2:3:6:4)'
     ],
-    'foo (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test91.js:3:12:5:9)': [
-        'foo2 (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test91.js:3:13:5:6)'
+    'foo (test91.js:3:12:5:9)': [
+        'foo2 (test91.js:3:13:5:6)'
     ],
-    'anon (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test91.js:8:3:8:8)': [
-        'foo3 (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test91.js:4:14:4:32)'
+    'anon (test91.js:8:3:8:8)': [
+        'foo3 (test91.js:4:14:4:32)'
     ]
 }

@@ -1,8 +1,8 @@
 {
-    'global (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test12.js:8:12:8:45)': [
-        'Book (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test12.js:1:1:7:2)'
+    'global (test12.js:8:12:8:45)': [
+        'Book (test12.js:1:1:7:2)'
     ],
-    'global (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test12.js:9:1:9:18)': [
-        'anon (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test12.js:4:21:6:4)'
+    'global (test12.js:9:1:9:18)': [
+        'anon (test12.js:4:21:6:4)'
     ]
 }

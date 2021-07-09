@@ -25,6 +25,13 @@
         var SPECIAL_PROP_SID = J$.Constants.SPECIAL_PROP_SID;
         var SPECIAL_PROP_IID = J$.Constants.SPECIAL_PROP_IID;
 
+        //Capturing functions that are not defined in EcmaScript
+        jSetTimeout = setTimeout
+        jSetInterval = setInterval
+        jClearTimeout = clearTimeout
+        jClearInterval = clearInterval
+        var jFunDefs=[jSetTimeout, jSetInterval, jClearTimeout, jClearInterval]
+
         function isNative(input){
                 if(input.toString() !== undefined){
                     return input.toString().indexOf('[native code]') > -1 || input.toString().indexOf('[object ') === 0
@@ -179,7 +186,7 @@
                                 calleeToCallingLoc[fgiid] = giid;
                         }
                         //Identifying Non-native -> Native Calls
-                        if (isNative(f)) {
+                        if (isNative(f) || jFunDefs.includes(f)) {
                         
                                 callerIid =  getCallerName() + " " + getLoc(giid);
                                 calleeIid =  funName + " (Native)" + getLoc(giid);
@@ -360,7 +367,7 @@
 }());
 
 /*
-node src/js/commands/jalangi.js --inlineIID --inlineSource --analysis DCG_detailed.js experiments/example.js
-node src/js/commands/instrument.js --inlineIID --inlineSource -i --inlineJalangi --analysis src/js/sample_analyses/ChainedAnalyses.js --analysis src/js/sample_analyses/dlint/Utils.js --analysis DCG_detailed.js --outputDir /tmp experiments/html/
+node node_modules/jalangi2/src/js/commands/jalangi.js --inlineIID --inlineSource --analysis src/DCG_detailed.js experiments/example.js
+node node_modules/jalangi2/src/js/commands/instrument.js --inlineIID --inlineSource -i --inlineJalangi --analysis node_modules/jalangi2/src/js/sample_analyses/ChainedAnalyses.js --analysis node_modules/jalangi2/src/js/sample_analyses/dlint/Utils.js --analysis src/DCG_detailed.js --outputDir /tmp experiments/html/
 open file:///tmp/html/index.html
 */

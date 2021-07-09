@@ -1,14 +1,14 @@
 {
-    'global (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test84.js:1:1:17:5)': [
-        'anon (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test84.js:1:2:17:2)'
+    'global (test84.js:1:1:17:5)': [
+        'anon (test84.js:1:2:17:2)'
     ],
-    'anon (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test84.js:14:15:14:41)': [
-        'Proxy (Native)(/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test84.js:14:15:14:41)'
+    'anon (test84.js:14:15:14:41)': [
+        'Proxy (Native)(test84.js:14:15:14:41)'
     ],
     'anon (Native)': [
-        'anon (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test84.js:8:8:12:4)'
+        'anon (test84.js:8:8:12:4)'
     ],
-    'anon (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test84.js:16:1:16:4)': [
-        'anon (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test84.js:9:12:11:6)'
+    'anon (test84.js:16:1:16:4)': [
+        'anon (test84.js:9:12:11:6)'
     ]
 }

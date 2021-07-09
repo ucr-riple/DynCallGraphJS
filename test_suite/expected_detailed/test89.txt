@@ -1,8 +1,8 @@
 {
-    'global (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test89.js:10:14:10:41)': [
-        'Proxy (Native)(/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test89.js:10:14:10:41)'
+    'global (test89.js:10:14:10:41)': [
+        'Proxy (Native)(test89.js:10:14:10:41)'
     ],
-    'global (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test89.js:11:1:11:20)': [
-        'anon (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test89.js:5:15:7:4)'
+    'global (test89.js:11:1:11:20)': [
+        'anon (test89.js:5:15:7:4)'
     ]
 }

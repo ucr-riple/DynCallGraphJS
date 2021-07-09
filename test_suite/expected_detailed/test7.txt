@@ -1,8 +1,8 @@
 {
-    'global (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test7.js:8:19:8:27)': [
-        'foo (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test7.js:2:1:4:2)'
+    'global (test7.js:8:19:8:27)': [
+        'foo (test7.js:2:1:4:2)'
     ],
-    'foo (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test7.js:3:10:3:15)': [
-        'bar (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test7.js:5:1:7:2)'
+    'foo (test7.js:3:10:3:15)': [
+        'bar (test7.js:5:1:7:2)'
     ]
 }

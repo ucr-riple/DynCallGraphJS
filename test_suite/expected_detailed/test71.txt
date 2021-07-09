@@ -1,8 +1,8 @@
 {
-    'global (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test71.js:1:1:16:5)': [
-        'anon (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test71.js:1:2:16:2)'
+    'global (test71.js:1:1:16:5)': [
+        'anon (test71.js:1:2:16:2)'
     ],
-    'anon (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test71.js:15:3:15:28)': [
-        'anon (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test71.js:4:17:6:8)'
+    'anon (test71.js:15:3:15:28)': [
+        'anon (test71.js:4:17:6:8)'
     ]
 }

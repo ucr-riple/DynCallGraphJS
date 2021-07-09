@@ -1,14 +1,14 @@
 {
-    'global (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test77.js:1:9:1:59)': [
-        'Function (Native)(/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test77.js:1:9:1:59)'
+    'global (test77.js:1:9:1:59)': [
+        'Function (Native)(test77.js:1:9:1:59)'
     ],
-    'global (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test77.js:1:9:1:61)': [
-        'anon (evalIndirect(/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test77.js:1:9:1:59):1:2:1:49)'
+    'global (test77.js:1:9:1:61)': [
+        'anon (evalIndirect(test77.js:1:9:1:59):1:2:1:49)'
     ],
-    'anon (evalIndirect(/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test77.js:1:9:1:59):1:22:1:46)': [
-        'Function (Native)(evalIndirect(/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test77.js:1:9:1:59):1:22:1:46)'
+    'anon (evalIndirect(test77.js:1:9:1:59):1:22:1:46)': [
+        'Function (Native)(evalIndirect(test77.js:1:9:1:59):1:22:1:46)'
     ],
-    'global (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test77.js:2:1:2:4)': [
-        'anon (evalIndirect(evalIndirect(/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test77.js:1:9:1:59):1:22:1:46):1:2:1:25)'
+    'global (test77.js:2:1:2:4)': [
+        'anon (evalIndirect(evalIndirect(test77.js:1:9:1:59):1:22:1:46):1:2:1:25)'
     ]
 }

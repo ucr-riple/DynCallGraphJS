@@ -37,3 +37,38 @@ describe('DCG Test Suite', () => {
 async function executeDCG(testFile){
     return await exec(`node node_modules/jalangi2/src/js/commands/jalangi.js --inlineIID --inlineSource --analysis src/DCG.js examples/${testFile}`)
 }
+
+describe('DCG detailed Test Suite', () => {
+    const resultsPath = path.join(__dirname, '/expected_detailed')
+    const excludePath = __dirname.replace('test_suite','examples/')
+    const pathRe = new RegExp(`${excludePath}`, 'g')
+    var casesAmount = 0
+    var cases = []
+    var expectedResults = new Map()
+
+    fs.readdirSync(resultsPath).forEach(element => {
+        let testName = element.replace(".txt", "")
+        let fullPath = path.join(resultsPath, element)
+        var results = fs.readFileSync(fullPath).toString()
+        expectedResults[testName] = results
+        casesAmount += 1
+    })
+
+    for(var i = 1; i <= casesAmount; i++){
+        cases[i] = i
+    }
+
+    test.each(cases)('test', async (i) => {
+        const dcg = await executeDCGdetailed(`test${i}.js`)
+        strDCG = dcg['stdout'].toString()
+        strDCG = strDCG.replace(pathRe, "")
+        strDCG = strDCG.replace(/^[^\]{]*/, "")
+        strDCG = strDCG.replace(/\s/g, "")
+    
+        expect(strDCG).toBe(expectedResults[`test${i}`].replace(/\s/g, ""))
+    })
+})
+
+async function executeDCGdetailed(testFile){
+    return await exec(`node node_modules/jalangi2/src/js/commands/jalangi.js --inlineIID --inlineSource --analysis src/DCG_detailed.js examples/${testFile}`)
+}

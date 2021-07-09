@@ -1,17 +1,17 @@
 {
-    'global (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test43.js:8:16:8:28)': [
-        'bind (Native)(/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test43.js:8:16:8:28)'
+    'global (test43.js:8:16:8:28)': [
+        'bind (Native)(test43.js:8:16:8:28)'
     ],
-    'global (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test43.js:10:1:10:4)': [
-        'bound anon (Native)(/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test43.js:10:1:10:4)'
+    'global (test43.js:10:1:10:4)': [
+        'bound anon (Native)(test43.js:10:1:10:4)'
     ],
-    'bound anon (Native) (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test43.js:10:1:10:4)': [
-        'anon (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test43.js:5:9:7:2)'
+    'bound anon (Native) (test43.js:10:1:10:4)': [
+        'anon (test43.js:5:9:7:2)'
     ],
-    'global (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test43.js:12:1:12:14)': [
-        'apply (Native)(/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test43.js:12:1:12:14)'
+    'global (test43.js:12:1:12:14)': [
+        'apply (Native)(test43.js:12:1:12:14)'
     ],
-    'apply (Native) (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test43.js:12:1:12:14)': [
-        'anon (/Users/madhurimachakraborty/Documents/GitHub/DynCallGraphJS/examples/test43.js:5:9:7:2)'
+    'apply (Native) (test43.js:12:1:12:14)': [
+        'anon (test43.js:5:9:7:2)'
     ]
 }
