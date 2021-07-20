@@ -29,7 +29,8 @@
         jSetInterval = setInterval
         jClearTimeout = clearTimeout
         jClearInterval = clearInterval
-        var jFunDefs=[jSetTimeout, jSetInterval, jClearTimeout, jClearInterval]
+        var spclFunList = [jSetTimeout, jSetInterval, jClearTimeout, jClearInterval]
+        var spclCaller = "";
 
         function isNative(input){
                 if(input.toString() !== undefined){
@@ -179,7 +180,7 @@
                                 calleeToCallingLoc[fgiid] = giid;
                         }
                         //Identifying Non-native -> Native Calls
-                        if (isNative(f) || jFunDefs.includes(f)) {
+                        if (isNative(f) || spclFunList.includes(f)) {
                                 callerIid = getLoc(giid);
                                 calleeIid = funName + " (Native)"
 
@@ -216,7 +217,13 @@
                         if (calleeToCallingLoc[giid] == undefined) {
                                 //If the CallStack is empty, when a function is called , the caller name is assigned as "system"
                                 if (callStack.length === 0) {
-                                        callerName = "system";
+                                        if(spclCaller!=""){
+                                                callerName = spclCaller;
+                                                //spclCaller="";
+                                        }else{
+                                                callerName = "system";
+                                        }
+                                        
                                 }
                                 else {  
                                         callerName = iidToFunInfo[callStack[callStack.length - 1]]["name"] ;
@@ -312,6 +319,9 @@
                         var giid = J$.getGlobalIID(iid);
                         if (callStack[callStack.length - 1] == giid) {
                                 callStack.pop();
+                        }
+                        if(spclFunList.includes(f)){
+                                spclCaller=f.name;
                         }
                 },
                 /**
